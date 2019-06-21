@@ -1,0 +1,74 @@
+.contact-detail-header{
+  height: 48px;
+  background: #DDD;
+  border-bottom: #CCC;
+}
+
+.return-to-list{
+  float: left;
+  margin: 20px;
+}
+
+.star-img-container{
+  float: right;
+  margin: 20px;
+}
+
+.contact-img{
+  max-width: 240px;
+}
+
+.detail-info-container{
+  padding: 30px;
+}
+
+.contact-name-detail-container{
+  padding-bottom: 30px;
+  border-bottom: 1px solid #DDD;
+}
+
+.contact-name-detail{
+  font-size: 24px;
+}
+
+.company-name-detail{
+  margin: -18px 0 0 0;
+  color: #BBB;
+  font-size: 14px;
+}
+
+.detail-field{
+  display: flex;
+  border-bottom: 1px solid #DDD;
+  padding: 20px;
+
+  &:last-child{
+    padding-bottom: 0;
+    border: none;
+  }
+}
+
+.field-main-info-container{
+  text-align: left;
+  width: 80%;
+}
+
+.field-subtitle{
+  text-align: right;
+  width: 20%;
+  position: relative;
+  font-size: 14px;
+  color: #BBB;
+  top: 10px;
+}
+
+.field-title{
+  font-size: 14px;
+  color: #BBB;
+}
+
+.field-info{
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: -5px;
+}

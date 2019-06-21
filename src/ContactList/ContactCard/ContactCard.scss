@@ -1,0 +1,55 @@
+.user-icon{
+  max-width: 60px;
+}
+
+.card-container{
+  display: flex;
+  padding: 30px 0 30px;
+  border-bottom: 1px solid #CCC;
+
+  &:last-child{
+    border: none;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.img-container{
+  width: 15%;
+}
+
+@media(max-width: 767px){
+  .img-container{
+    width: 40%
+  }
+}
+
+.info-container{
+  width: 85%;
+  display: flex;
+  text-align: left;
+  position: relative;
+  top: 13px;
+}
+
+.star-img{
+  width: 5%;
+}
+
+@media(max-width: 767px){
+  .star-img{
+    width: 12%
+  }
+}
+
+.contact-name{
+  position: relative;
+  top: 5px;
+}
+
+.company-name{
+  font-size: 13px;
+  color: #CCC;
+}

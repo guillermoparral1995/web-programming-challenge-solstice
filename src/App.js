@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import ContactList from "./ContactList/ContactList";
-import {Route, Switch} from "react-router-dom";
+import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import ContactDetail from "./ContactDetail/ContactDetail";
 
 class App extends React.Component {
@@ -49,10 +49,14 @@ class App extends React.Component {
     render() {
         return (
             <div className='app'>
-                <Switch>
-                    <Route exact path='/' render={() => <ContactList favorites={this.state.favorites} others={this.state.others}/>}/>
-                    <Route path='/contact/:name' render={(props) => <ContactDetail {...props} handleFavorite={this.handleFavorite}/>}/>
-                </Switch>
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path='/' render={() => <ContactList favorites={this.state.favorites} others={this.state.others}/>}/>
+                        <Route path='/contact/:name' render={(props) =>
+                            props.location.contactInfo ? <ContactDetail {...props} handleFavorite={this.handleFavorite}/> : <Redirect to="/" />
+                        }/>
+                    </Switch>
+                </BrowserRouter>
             </div>
         );
     }

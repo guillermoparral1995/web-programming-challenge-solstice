@@ -35,6 +35,8 @@
 }
 
 .star-img{
+  position: relative;
+  top: 3px;
   width: 5%;
 }
 
@@ -44,9 +46,13 @@
   }
 }
 
-.contact-name{
+.contact-name-container{
   position: relative;
   top: 5px;
+}
+
+.contact-name{
+  font-size: 18px;
 }
 
 .company-name{

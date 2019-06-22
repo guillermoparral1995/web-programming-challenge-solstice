@@ -21,8 +21,8 @@ const ContactCard = ({contactInfo, linkPath}) => {
                 contactInfo.isFavorite ? <span role="img" aria-label="star-emoji">⭐</span> : null
             }
             </div>
-            <div className="contact-name">
-                <p>{contactInfo.name}</p>
+            <div className="contact-name-container">
+                <p className='contact-name'>{contactInfo.name}</p>
                 {contactInfo.companyName ? <p className='company-name'>{contactInfo.companyName}</p> : null}
             </div>
 

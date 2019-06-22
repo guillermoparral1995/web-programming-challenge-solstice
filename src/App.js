@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import ContactList from "./ContactList/ContactList";
-import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
 import ContactDetail from "./ContactDetail/ContactDetail";
 
 class App extends React.Component {
@@ -14,11 +14,11 @@ class App extends React.Component {
         this.handleFavorite = this.handleFavorite.bind(this);
     }
 
-    compare(name1, name2){
+    compare(name1, name2) {
         return name1 < name2 ? -1 : name1 > name2 ? 1 : 0;
     }
 
-    handleFavorite(contact){
+    handleFavorite(contact) {
         contact.isFavorite = !contact.isFavorite;
         this.setState(prevState => ({
             favorites: !contact.isFavorite ?
@@ -37,7 +37,7 @@ class App extends React.Component {
                 let favorites = [];
                 let others = [];
                 response.forEach(contact => {
-                   contact.isFavorite ? favorites.push(contact) : others.push(contact);
+                    contact.isFavorite ? favorites.push(contact) : others.push(contact);
                 });
                 favorites.sort((cn1, cn2) => this.compare(cn1.name, cn2.name));
                 others.sort((cn1, cn2) => this.compare(cn1.name, cn2.name));
@@ -49,14 +49,14 @@ class App extends React.Component {
     render() {
         return (
             <div className='app'>
-                <BrowserRouter>
-                    <Switch>
-                        <Route exact path='/' render={() => <ContactList favorites={this.state.favorites} others={this.state.others}/>}/>
-                        <Route path='/contact/:name' render={(props) =>
-                            props.location.contactInfo ? <ContactDetail {...props} handleFavorite={this.handleFavorite}/> : <Redirect to="/" />
-                        }/>
-                    </Switch>
-                </BrowserRouter>
+                <Switch>
+                    <Route exact path='/'
+                           render={() => <ContactList favorites={this.state.favorites} others={this.state.others}/>}/>
+                    <Route path='/contact/:name' render={(props) =>
+                        props.location.contactInfo ? <ContactDetail {...props} handleFavorite={this.handleFavorite}/> :
+                            <Redirect to="/"/>
+                    }/>
+                </Switch>
             </div>
         );
     }

@@ -8,13 +8,13 @@ const ContactList = ({favorites, others}) => {
     return <div className='contact-list'>
         <div className='header'>Contacts</div>
         <div className="subheader">Favorite Contacts</div>
-        <div className='contacts-container'>
+        <div className='contacts-container favorites'>
             {favorites.map((contact, idx) =>
                 <ContactCard key={idx} contactInfo={contact} linkPath={contactPath(contact)}/>
             )}
         </div>
         <div className="subheader">Other Contacts</div>
-        <div className='contacts-container'>
+        <div className='contacts-container others'>
             {others.map((contact, idx) =>
                 <ContactCard key={idx} contactInfo={contact} linkPath={contactPath(contact)}/>
             )}

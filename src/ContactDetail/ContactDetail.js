@@ -51,7 +51,7 @@ const ContactDetail = ({location: {contactInfo}, handleFavorite}) => {
 
     return <div className='contact-detail'>
         <div className='contact-detail-header'>
-            <Link className='return-to-list' to='/'>&#x003c; Contacts</Link>
+            <Link className='return-to-list' to='/'>&lt; Contacts</Link>
             <div className='star-img-container' onClick={() => handleFavorite(contactInfo)}>
                 <img src={favoriteStarImg} alt=''/>
             </div>
